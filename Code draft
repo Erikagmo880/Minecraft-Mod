@@ -1,0 +1,22 @@
+package minecraftbyexample.mbe10_item_simple;
+
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.Item;
+
+public class ItemSimple extends Item
+{
+  static private final int MAXIMUM_NUMBER_OF_CAKES = 50; 
+  public ItemSimple()
+  {
+    super(new Item.Properties().maxStackSize(MAXIMUM_NUMBER_OF_CAKES).group(ItemGroup.MISC)     );
+public static final RegistryObject<Item> STRAWBERRYSHORT_CAKE = ITEMS.register("strawberryshort_cake", {
+    () -> new Item(new Item.Properties()
+        .food(new FoodComponent.Builder()
+            .hunger(6)
+            .saturation(0.6f)
+            .build())));
+}
+  }
+}
+
+give @p cake[food={nutrition:4,saturation:2,effects:[{effect:{id:"minecraft:contentment",zoomies:1,duration:200},probability:1.0f}]}] 1v
